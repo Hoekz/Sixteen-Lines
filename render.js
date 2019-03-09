@@ -37,7 +37,7 @@ export default class Renderer {
         this.ctx.stroke();
     }
 
-    render() {
+    render(map) {
 
     }
 }

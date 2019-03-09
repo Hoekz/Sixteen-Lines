@@ -74,9 +74,15 @@ export default class Line {
 
             shapes.points = extract(diff / THRESHOLD_DIFF, reverse, first.shape.points);
 
-            return shape.render(x, y, t);
+            const res = shape.render(x, y, t);
+            res.completeness = diff / THRESHOLD_DIFF;
+
+            return res;
         }
 
-        return first.shape.render(x, y, t);
+        const res = first.shape.render(x, y, t);
+        res.completeness = 1;
+
+        return res;
     }
 }
